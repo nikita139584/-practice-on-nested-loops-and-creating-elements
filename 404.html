@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+<script>
+
+  let width = prompt("Введите width");
+  let height = prompt("Введите height");
+  let width1 = prompt("Введите ширину блока (Стандарт 50)");
+  let height1 = prompt("Введите высоту блока (Стандарт 50)");
+
+  for (let i = 0; i < width; i++) { // 0 1 2 3 4 - 5 iterations
+    for (let j = 0; j < height; j++) {
+      let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      let randomColor2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      let div  = document.createElement("div");
+      div.textContent = j + "";
+      div.style.position = "absolute";
+      div.style.top = i * 60 + 50 + "px";
+      div.style.left = j * 60 + 50 + "px";
+      div.style.width =  width1 + "px";
+      div.style.height = height1 + "px";
+      div.style.border = "3px solid " + randomColor2;
+      div.style.borderRadius = "5px";
+      div.style.background = randomColor;
+      div.style.display = "flex";
+      div.style.justifyContent = "center";
+      div.style.alignItems = "center";
+      document.body.appendChild(div);
+
+
+    }
+  }
+</script>
+</body>
+</html>
+
